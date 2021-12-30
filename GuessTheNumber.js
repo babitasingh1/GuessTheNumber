@@ -41,4 +41,14 @@ const validateInput = (e) => {
 
   counter += 1;
 };
+
+const reStartTheGame = (e) => {
+  e.preventDefault();
+  counter = 0;
+  restartButton.hidden = true;
+  submitButton.disabled = false;
+  message.textContent = "";
+  console.log("restart");
+};
 submitButton.addEventListener("click", validateInput);
+restartButton.addEventListener("click", reStartTheGame);
