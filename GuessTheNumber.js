@@ -11,23 +11,25 @@ const validateInput = (e) => {
   message.textContent = "";
   if (counter == 10) {
     message.textContent = "You did not guess the no.";
-    message.style.padding = 4;
+
     message.style.backgroundColor = "red";
+    message.style.width = "500px";
     form.reset();
     restartButton.hidden = false;
     submitButton.disabled = true;
     return;
   }
-  console.log(randomNumber);
-  console.log(userInput.value);
+
   if (userInput.value > randomNumber) {
     message.textContent = "input is too higher than the random";
-    message.style.padding = 4;
+
     message.style.backgroundColor = "red";
+    message.style.width = "500px";
   } else if (userInput.value == randomNumber) {
     message.textContent = "input is equal to the no";
-    message.style.padding = 4;
+
     message.style.backgroundColor = "green";
+    message.style.width = "500px";
     form.reset();
     restartButton.hidden = false;
     submitButton.disabled = true;
@@ -35,8 +37,9 @@ const validateInput = (e) => {
     return;
   } else if (userInput.value < randomNumber) {
     message.textContent = "input is lower than the no";
-    message.style.padding = 4;
+
     message.style.backgroundColor = "red";
+    message.style.width = "500px";
   }
 
   counter += 1;
@@ -48,7 +51,6 @@ const reStartTheGame = (e) => {
   restartButton.hidden = true;
   submitButton.disabled = false;
   message.textContent = "";
-  console.log("restart");
 };
 submitButton.addEventListener("click", validateInput);
 restartButton.addEventListener("click", reStartTheGame);
